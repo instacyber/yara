@@ -1,0 +1,8 @@
+rule mal_kopiluwak_dropper
+{
+    strings:
+        $quit = "WScript.Quit();"
+        $alpha = "\"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/\";var i"
+    condition:
+        $quit and $alpha
+}
